@@ -4,9 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>GrapesJS Plugin</title>
-  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/grapesjs"></script>
+  <link href="dist/grapes.min.css" rel="stylesheet">
   <script src="dist/grapesjs-mjml.min.js"></script>
+  <link href="dist/grapes.unpkg.min.css" rel="stylesheet"/>
+  <script src="dist/grapes.js"></script>
+  <script src="dist/grapesjs-plugin-export.js"></script>
+  <script src="dist/grapesjs-custom-code.js"></script>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
+
+  
   <style>
     body,
     html {
@@ -31,106 +38,196 @@
 </head>
 
 <body>
+  <div class="panel__top">
+    <div class="panel__basic-actions"></div>
+</div>
 
   <div id="gjs" style="height:0px; overflow:hidden">
-    <mjml>
-      <mj-head>
-        <mj-font name="Barlow" href="https://fonts.googleapis.com/css?family=Barlow" />
-
-        <mj-style>
-          .slogan {
-            background: #000;
-          }
-        </mj-style>
+    <mjml id="i8ph">
+      <mj-head id="i08u">
+        <mj-attributes id="iwze">
+          <mj-text font-family="Helvetica, Arial, sans-serif" align="center" color="#555">Header test
+            <div>
+              <br/>
+            </div>
+          </mj-text>
+        </mj-attributes>
       </mj-head>
-      <mj-body>
-        <!-- Company Header -->
-        <mj-section background-color="#f0f0f0">
+      <mj-body background-color="#fff">
+        <mj-section background-color="#fff" padding-top="5px" padding-bottom="0">
           <mj-column>
-            <mj-text font-family="Barlow">A first line of text</mj-text>
-            <mj-spacer height="50px" />
+            <mj-text font-weight="normal" align="center" color="#00367C" font-size="32px" line-height="110%" id="i88z">
+              Envie de bons plans ?
+            </mj-text>
+            <mj-image src="./img/header.jpg" alt="Avec Ma Vie en couleurs et cora" width="425px" padding-bottom="2px" padding-top="2px"/>
+            <mj-text font-weight="normal" align="center" color="#00367C" font-size="28px" line-height="115%">
+              %Subscriber:PRENOM% profitez d'un automne plein d'économies&nbsp;!
+            </mj-text>
           </mj-column>
         </mj-section>
-
-        <!-- Image Header -->
-        <mj-section background-url="http://1.bp.blogspot.com/-TPrfhxbYpDY/Uh3Refzk02I/AAAAAAAALw8/5sUJ0UUGYuw/s1600/New+York+in+The+1960's+-+70's+(2).jpg"
-          background-size="cover" background-repeat="no-repeat">
-          <mj-column>
-            <mj-text css-class="slogan" align="center" color="#fff" font-size="40px" font-family="Helvetica Neue">Slogan here</mj-text>
-            <mj-button background-color="#F63A4D" href="#">
-              Promotion
+        <mj-section background-color="#fff" padding="0">
+          <mj-column css-class="col-100" background-color="#E9A4A6" padding="0px" border="solid 5px #fff">
+            <mj-image src="./img/image-01.png" alt="Connectez-vous" width="230px" padding="5px" padding-bottom="15px"/>
+            <mj-button background-color="#612027" color="#fff" font-size="24px" border-radius="25px" padding-top="0" padding-bottom="20px" href="https://www.mavieencouleurs.fr/auth/login">
+              Connectez-vous
             </mj-button>
           </mj-column>
         </mj-section>
-
-        <!-- Intro text -->
-        <mj-wrapper background-color="#ffe9f7" padding="10px">
-          <mj-section background-color="#eaeffa">
-            <mj-group background-color="#fffadd">
-              <mj-column>
-                <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">My Awesome Text</mj-text>
-                <mj-text color="#525252">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum enim eget magna efficitur, eu semper augue semper.
-                  Aliquam erat volutpat. Cras id dui lectus. Vestibulum sed finibus lectus, sit amet suscipit nibh. Proin nec
-                  commodo purus. Sed eget nulla elit. Nulla aliquet mollis faucibus.
-                </mj-text>
-                <mj-button background-color="#F45E43" href="#">Learn more</mj-button>
-              </mj-column>
-            </mj-group>
-          </mj-section>
-        </mj-wrapper>
-
-        <!-- Side image -->
-        <mj-section background-color="white">
-          <mj-column>
-            <mj-image width="200px" src="https://designspell.files.wordpress.com/2012/01/sciolino-paris-bw.jpg" />
-          </mj-column>
-          <mj-column>
-            <mj-text font-style="italic" font-size="20px" font-family="Helvetica Neue" color="#626262">
-              Find amazing places
+        <mj-section background-color="#fff" padding="0">
+          <mj-column background-color="#E9A4A6" padding="0px" border="solid 5px #fff">
+            <mj-image src="./img/image-03.png" alt="Achetez" width="230px" padding="5px" padding-top="0"/>
+            <mj-text align="center" color="#612027" font-size="24px" font-weight="bold" line-height="120%" padding="10px" padding-bottom="0">ACHETEZ
             </mj-text>
-            <mj-text color="#525252">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rutrum enim eget magna efficitur, eu semper augue semper.
-              Aliquam erat volutpat. Cras id dui lectus. Vestibulum sed finibus lectus.</mj-text>
+            <mj-text align="center" color="#fff" font-size="16px" line-height="125%" padding="20px" padding-top="3px" padding-bottom="15px">les produits dans votre magasin cora.
+            </mj-text>
+          </mj-column>
+          <mj-column background-color="#E9A4A6" padding="0px" border="solid 5px #fff">
+            <mj-image src="./img/image-04.png" alt="Réglez" width="230px" padding="5px"/>
+            <mj-text align="center" color="#612027" font-size="24px" font-weight="bold" line-height="120%" padding="10px" padding-top="15px" padding-bottom="0">RÉGLEZ
+            </mj-text>
+            <mj-text align="center" color="#fff" font-size="16px" line-height="125%" padding="20px" padding-top="3px" padding-bottom="18px">avec votre carte cora ou présentez votre carte malin en caisse pour profiter de vos réductions.
+            </mj-text>
           </mj-column>
         </mj-section>
-        <!-- Icons -->
-        <mj-section background-color="#fbfbfb">
-          <mj-column>
-            <mj-image width="100px" src="http://191n.mj.am/img/191n/3s/x0l.png" />
+        <mj-section background-color="#FFC73C" padding="0" border="solid 5px #fff">
+          <mj-group>
+            <mj-column css-class="mobile-hidden" padding="0px" width="25%">
+              <mj-image src="./img/image-05.png" align="right" width="165px" padding="0"/>
+            </mj-column>
+            <mj-column css-class="col-100" padding="0px" vertical-align="top" width="50%">
+              <mj-text align="center" color="#612027" font-size="34px" font-weight="bold" line-height="110%" padding="20px" padding-top="15%" padding-bottom="3%">Découvrez vos remises du mois
+              </mj-text>
+              <mj-button background-color="#612027" color="#fff" font-size="22px" border-radius="25px" padding="10px" padding-bottom="20px" href="https://www.mavieencouleurs.fr/">
+                Vite, j'en profite !
+              </mj-button>
+            </mj-column>
+            <mj-column css-class="mobile-hidden" padding="0px" width="25%">
+              <mj-image src="./img/image-06.png" align="right" width="165px" padding="0"/>
+            </mj-column>
+          </mj-group>
+        </mj-section>
+        <mj-section background-color="#fff">
+          <mj-column css-class="footer-col footer-col-1">
+            <mj-image css-class="footer-image" src="./img/footer-picto1.jpg" alt="cora.fr" width="140px" padding-left="0px" padding-right="0px" padding-bottom="0" padding-top="0" href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%"/>
+            <mj-text font-weight="normal" align="center" color="#333333" font-size="12px" padding-left="10px" padding-right="10px" padding-bottom="0px" padding-top="0">
+              <a href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%" target="_blank" style="color:#6a6a6a; text-decoration:none;">cora.fr</a>
+            </mj-text>
           </mj-column>
-          <mj-column>
-            <mj-image width="100px" src="http://191n.mj.am/img/191n/3s/x01.png" />
+          <mj-column css-class="footer-col footer-col-2">
+            <mj-image css-class="footer-image" src="./img/footer-picto2.jpg" alt="Mes catalogues" width="140px" padding-left="0px" padding-right="0px" padding-bottom="0" padding-top="0" href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%/faire-des-economies-aujourdhui/prospectus.html"/>
+            <mj-text font-weight="normal" align="center" color="#333333" font-size="12px" padding-left="10px" padding-right="10px" padding-bottom="0px" padding-top="0">
+              <a href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%/faire-des-economies-aujourdhui/prospectus.html" target="_blank" style="color:#6a6a6a; text-decoration:none;">Mes catalogues</a>
+            </mj-text>
           </mj-column>
-          <mj-column>
-            <mj-image width="100px" src="http://191n.mj.am/img/191n/3s/x0s.png" />
+          <mj-column css-class="footer-col footer-col-3">
+            <mj-image css-class="footer-image" src="./img/footer-picto3.jpg" alt="coradrive.fr" width="140px" padding-left="0px" padding-right="0px" padding-bottom="0" padding-top="0" href="https://www.coradrive.fr/%Subscriber:NUM_MAGASIN%"/>
+            <mj-text font-weight="normal" align="center" color="#333333" font-size="12px" padding-left="10px" padding-right="10px" padding-bottom="0px" padding-top="0">
+              <a href="https://www.coradrive.fr/%Subscriber:NUM_MAGASIN%" target="_blank" style="color:#6a6a6a; text-decoration:none;">coradrive.fr</a>
+            </mj-text>
+          </mj-column>
+          <mj-column css-class="footer-col footer-col-4">
+            <mj-image css-class="footer-image" src="./img/footer-picto4.jpg" alt="Mes applications" width="140px" padding-left="0px" padding-right="0px" padding-bottom="0" padding-top="0" href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%/encore-plus-dextras-cora/applications-mobiles.html"/>
+            <mj-text font-weight="normal" align="center" color="#333333" font-size="12px" padding-left="10px" padding-right="10px" padding-bottom="0px" padding-top="0">
+              <a href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%/encore-plus-dextras-cora/applications-mobiles.html" target="_blank" style="color:#6a6a6a; text-decoration:none;">Mes applications</a>
+            </mj-text>
+          </mj-column>
+          <mj-column css-class="footer-col footer-col-5">
+            <mj-image css-class="footer-image" src="./img/footer-picto5.jpg" alt="Prime énergie" width="140px" padding-left="0px" padding-right="0px" padding-bottom="0" padding-top="0" href="http://www.prime-energie-cora.fr/"/>
+            <mj-text font-weight="normal" align="center" color="#333333" font-size="12px" padding-left="10px" padding-right="10px" padding-bottom="0px" padding-top="0">
+              <a href="http://www.prime-energie-cora.fr/" target="_blank" style="color:#6a6a6a; text-decoration:none;">Prime énergie</a>
+            </mj-text>
           </mj-column>
         </mj-section>
-
-        <!-- Footer -->
-        <mj-section background-color="#e7e7e7">
+        <mj-section padding="0" background-color="#fff">
           <mj-column>
-            <mj-button href="#">Hello There!</mj-button>
-            <mj-social font-size="15px" icon-size="30px" mode="horizontal">
-              <mj-social-element name="facebook" href="https://mjml.io/">
-                Facebook
-              </mj-social-element>
-              <mj-social-element name="google" href="https://mjml.io/">
-                Google
-              </mj-social-element>
-              <mj-social-element name="twitter" href="https://mjml.io/">
-                Twitter
-              </mj-social-element>
-            </mj-social>
+            <mj-divider border-width="1px" border-color="#ececec" padding="5px">
+            </mj-divider>
           </mj-column>
         </mj-section>
-        <!-- Footer -->
+        <mj-section padding="0" background-color="#fff">
+          <mj-group width="58%" vertical-align="middle">
+            <mj-column width="34%" vertical-align="middle">
+              <mj-text font-weight="normal" align="center" color="#333333" font-size="14px" padding-left="10px" padding-right="0" padding-bottom="0" padding-top="0">
+                Rejoignez-nous
+              </mj-text>
+            </mj-column>
+            <mj-column width="66%" vertical-align="middle">
+              <mj-social icon-size="40px" padding="0">
+                <mj-social-element src="./img/footer-social-facebook.png" href="https://www.facebook.com/hypermarches.cora/" target="_blank" padding="0">
+                </mj-social-element>
+                <mj-social-element src="./img/footer-social-twitter.png" href="https://twitter.com/corafrance" target="_blank" padding="0">
+                </mj-social-element>
+                <mj-social-element src="./img/footer-social-instagram.png" href="https://www.instagram.com/cora_france_officiel" target="_blank" padding="0">
+                </mj-social-element>
+                <mj-social-element src="./img/footer-social-influx.png" href="https://www.instagram.com/influxcora" target="_blank" padding="0">
+                </mj-social-element>
+              </mj-social>
+            </mj-column>
+          </mj-group>
+          <mj-group width="42%" vertical-align="middle">
+            <mj-column vertical-align="middle">
+              <mj-image src="./img/footer-comptez-sur-nous-cora.png" alt="Comptez sur nous" width="225px" padding-left="10px" padding-right="10px" padding-bottom="0" padding-top="0" href="https://www.cora.fr/%Subscriber:NUM_MAGASIN%"/>
+            </mj-column>
+          </mj-group>
+        </mj-section>
+        <mj-section padding="0" background-color="#fff">
+          <mj-column>
+            <mj-divider border-width="1px" border-color="#ececec" padding="5px">
+            </mj-divider>
+          </mj-column>
+        </mj-section>
+        <mj-section padding="20px" padding-top="0" background-color="#fff">
+          <mj-column css-class="footer-text">
+            <mj-text font-weight="normal" align="justify" color="#6a6a6a" font-size="10px" line-height="14px" padding-left="0" padding-right="0" padding-bottom="0" padding-top="0">
+              <p align="center">Protégez l’environnement, n’imprimez ce mail que si c’est nécessaire !
+              </p>
+              <p>Les données personnelles recueillies par Cora font l'objet d'un traitement basé sur votre consentement, lorsque vous avez accepté de recevoir nos informations et offres promotionnelles, ou notre intérêt légitime lorsque vous disposez d’un Compte Client Internet, Cora est responsable du traitement nécessaire à l’envoi de ses offres commerciales ou promotionnelles et celles de ses partenaires, ainsi que pour réaliser des études marketing et statistiques concernant notamment la qualité de nos produits et services.
+              </p>
+              <p>Ces informations seront conservées jusqu’à trois ans si vous avez consenti à recevoir nos offres promotionnelles ou jusqu’à 10 ans suivant la dernière activité de votre Compte Client Internet. Conformément au Règlement (UE) 2016/679 relatif à la protection des données à caractère personnel, vous disposez des droits suivants sur vos données : droit d’accès, droit de rectification, droit à l’effacement (droit à l’oubli), droit d’opposition, droit à la limitation du traitement, droit à la portabilité. Vous pouvez également définir des directives relatives à la conservation, à l'effacement et à la communication de vos données à caractère personnel après votre décès.
+              </p>
+              <p>Pour exercer vos droits, merci de cliquer sur le lien suivant :&nbsp;
+                <a href="https://www.cora.fr/donnees-personnelles" target="_blank" style="color:#6a6a6a">https://www.cora.fr/donnees-personnelles.</a> Vous pouvez également contacter la personne en charge des Données Personnelles à l’adresse suivante :&nbsp;
+                <a href="mailto:responsable-donnees-personnelles@cora.fr" target="_blank" style="color:#6a6a6a">responsable-donnees-personnelles@cora.fr</a>. Vos Données sont susceptibles de faire l’objet d’un transfert hors de l’Union Européenne, le cas échéant, ce transfert est encadré par des Clauses Contractuelles Types de la Commission Européenne.
+              </p>
+              <p>En cas de manquement aux dispositions ci-dessus, vous avez le droit d’introduire une réclamation auprès de la CNIL.
+              </p>
+            </mj-text>
+          </mj-column>
+        </mj-section>
       </mj-body>
     </mjml>
   </div>
+  <div id="capture">
 
+  <label id = "GFG"> 
+      
+  </label> 
+    
+  </div>
 
   <script type="text/javascript">
+
+  function myPlugin(editor){
+      
+    }
+
+    var text = document.body.innerHTML;
+    var counter = 0;
+/*
+  function getContentAction() {
+        var e = this,
+            o = this.editor,
+            n = document.createElement("button"),
+            n,innerHTML = "save",
+            n,className = "btn-prim "+ "btn-import__custom-code",
+            n,onclick = function() {
+            return e.handleSave()
+        }, n
+    }
+
+    function   handleSave() {
+    } */
+
     var editor = grapesjs.init({
       height: '100%',
       noticeOnUnload: 0,
@@ -138,14 +235,127 @@
       container: '#gjs',
       fromElement: true,
 
-      plugins: ['grapesjs-mjml'],
+      plugins: ['grapesjs-mjml', 'grapesjs-plugin-export', 'grapesjs-custom-code', 'myPlugin'],
       pluginsOpts: {
-        'grapesjs-mjml': {}
+        'grapesjs-mjml': {},
+        'grapesjs-plugin-export': {},
+        'grapesjs-custom-code': {},
+        'myPlugin' : {}
       }
+
+      
     });
 
+
+    
+/*
+    component.set({
+      toolbar: [
+
+      A chaque pensée, une image me revient
+      Un souvenir plaisant, agréable
+      Une douceur quotidienne
+
+
+        {
+          attributes: {class: 'fa fa-save'},
+                            command: function(e) { type()}
+
+        }
+      ],
+
+    });*/
+
+    editor.getConfig().showDevices = 0;
+/*
+editor.Panels.addPanel({ id: "options" }).get("buttons").add([
+    { id: "block-editor", command: function(e) { type()}, className: "fa fa-save" }
+]);
+
+
+*/
+
+function type(){
+/*
+  counter += 1;
+  //window.onload = function(){
+    let body = $(editor.Canvas.getBody());
+    let item = body.find(".gjs-comp-selected");
+    let template = item[0].innerHTML;
+    let attr = "data-gjs-type";
+    template = template.replace(/data-gjs-type=/g, 'id=');*/
+
+    /*let items = $("i8ph").html();*/
+    //let div = items.find("#" + template).html();
+
+/*
+    editor.
+    template = document.getElementsByClassName('gjs-comp-selected');
+    console.log(template);*/
+  //}
+/*
+  editor.BlockManager.add('block' + counter, {
+        label: template,
+        content: template,
+        category: 'Custom',
+        blockLabel: "Custom Code",
+        blockCustomCode: {},
+        propsCustomCode: {},
+        placeholderContent: "<canvas> </canvas>",
+        toolbarBtnCustomCode: {},
+        placeholderScript: '<div style="pointer-events: none; padding: 10px;">\n      <svg viewBox="0 0 24 24" style="height: 30px; vertical-align: middle;">\n        <path d="M13 14h-2v-4h2m0 8h-2v-2h2M1 21h22L12 2 1 21z"></path>\n        </svg>\n      Custom code with <i>&lt;script&gt;</i> can\'t be rendered on the canvas\n    </div>',
+        modalTitle: "Insert your code",
+        codeViewOptions: {},
+        buttonLabel: "Save",
+        commandCustomCode: {}
+      });
+      
+console.log(template);*/
+
+  const Url = 'http://localhost:8079/';
+
+  $.getJSON(Url, function(result){
+      console.log(result)
+    });
+
+      let cont = editor.BlockManager.get('block'+counter);
+      let contentz = cont.attributes.content;
+/*
+      document.getElementById('GFG').innerHTML 
+                = contentz;
+
+      html2canvas(document.getElementById('GFG')).then(canvas => {
+    document.body.appendChild(canvas);
+});*/
+/*
+editor.BlockManager.add('blockprev' + counter, {
+        label: contentz,
+        content: template,
+        category: 'Prev',
+        blockLabel: "Custom Code",
+        blockCustomCode: {},
+        propsCustomCode: {},
+        placeholderContent: "<canvas> </canvas>",
+        toolbarBtnCustomCode: {},
+        placeholderScript: '<div style="pointer-events: none; padding: 10px;">\n      <svg viewBox="0 0 24 24" style="height: 30px; vertical-align: middle;">\n        <path d="M13 14h-2v-4h2m0 8h-2v-2h2M1 21h22L12 2 1 21z"></path>\n        </svg>\n      Custom code with <i>&lt;script&gt;</i> can\'t be rendered on the canvas\n    </div>',
+        modalTitle: "Insert your code",
+        codeViewOptions: {},
+        buttonLabel: "Save",
+        commandCustomCode: {}
+      });*/
+
+
+
+}
+
+
+
     window.editor = editor;
+
+    
+
   </script>
+
 </body>
 
 </html>
